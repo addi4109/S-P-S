@@ -70,10 +70,23 @@ html { scroll-behavior: smooth; }
 #home-header.scrolled a { border-color: #d1d5db !important; }
 #home-header.scrolled .rounded-bl-full { border-color: #d1d5db !important; }
 
-#home-header:not(.scrolled) a,
-#home-header:not(.scrolled) span,
-#home-header:not(.scrolled) h3,
-#home-header:not(.scrolled) button {
+#home-header:not(.scrolled) > div a,
+#home-header:not(.scrolled) > div span,
+#home-header:not(.scrolled) > div h3,
+#home-header:not(.scrolled) > div button,
+#home-header:not(.scrolled) > ul > li > a,
+#home-header:not(.scrolled) > ul > li > span,
+#home-header:not(.scrolled) > ul > li > button {
   color: #ffffff !important;
+}
+
+#home-header ul.absolute a,
+#home-header .group ul a {
+  color: #0f172a !important;
+}
+
+#home-header ul.absolute a:hover,
+#home-header .group ul a:hover {
+  color: #2563eb !important;
 }
 

@@ -143,11 +143,29 @@ h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-#home-header:not(.scrolled) a,
-#home-header:not(.scrolled) span,
-#home-header:not(.scrolled) h3,
-#home-header:not(.scrolled) button {
+#home-header:not(.scrolled) > div a,
+#home-header:not(.scrolled) > div span,
+#home-header:not(.scrolled) > div h3,
+#home-header:not(.scrolled) > div button,
+#home-header:not(.scrolled) > ul > li > a,
+#home-header:not(.scrolled) > ul > li > span,
+#home-header:not(.scrolled) > ul > li > button {
   color: #ffffff !important;
+}
+
+/* ---- Dropdown menu popup links text color MUST be dark/black ---- */
+#home-header ul.absolute a,
+header ul.absolute a,
+#home-header .group ul a,
+header .group ul a {
+  color: #0f172a !important;
+}
+
+#home-header ul.absolute a:hover,
+header ul.absolute a:hover,
+#home-header .group ul a:hover,
+header .group ul a:hover {
+  color: #2563eb !important;
 }
 
 /* ---- Navigation font matching spssatara.com ---- */
