@@ -6,7 +6,7 @@ export default function PrincipalDesk() {
   const { t, img } = usePageContent('principalDesk')
 
   return (
-    <section className="bg-[#f7f5f0] min-h-screen pt-36 md:pt-44 pb-20 text-gray-800 font-serif">
+    <section className="bg-[#f7f5f0] min-h-screen pt-36 md:pt-44 pb-24 text-gray-800 font-serif">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         {/* Title & Underline with generous top padding */}
         <div className="text-center mb-16 pt-4">
@@ -18,12 +18,12 @@ export default function PrincipalDesk() {
 
         {/* Content Section: 2 Columns stretching to equal height */}
         <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-stretch">
-          {/* Left Column: Image stretched to equal content height */}
+          {/* Left Column: Image stretched to tall stately height */}
           <div className="md:col-span-5 flex flex-col justify-center">
-            <div className="w-full h-full bg-white p-2 border border-gray-200 shadow-sm rounded-sm flex flex-col">
+            <div className="w-full h-full bg-white p-2.5 border border-gray-200 shadow-sm rounded-sm flex flex-col">
               <img
                 alt={t('principalAlt', 'Principal')}
-                className="w-full h-full min-h-[440px] md:min-h-[520px] object-cover"
+                className="w-full h-full min-h-[500px] md:min-h-[600px] lg:min-h-[640px] object-cover"
                 src={img('principalImage', '/assets/images/principal.jpg')}
                 loading="lazy"
               />
@@ -31,7 +31,7 @@ export default function PrincipalDesk() {
           </div>
 
           {/* Right Column: Message */}
-          <div className="md:col-span-7 space-y-6 text-gray-700 leading-relaxed text-base md:text-lg flex flex-col justify-center">
+          <div className="md:col-span-7 space-y-7 text-gray-700 leading-relaxed text-base md:text-xl flex flex-col justify-center">
             <h2 className="text-2xl md:text-3xl font-serif text-gray-900 mb-2">
               {t('sectionHeading', 'Message from the Principal')}
             </h2>
