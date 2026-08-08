@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
 /* ============================================================
-   SPS — global styles
-   Base font + keyframes + component classes that were inline in
-   the original static pages. `legacy.css` (the compiled Tailwind
-   output from the original build) is imported after this file in
-   main.jsx to guarantee every historical utility class resolves.
+   SPS — global styles & Serif typography system
+   (Matching spssatara.com typography: Playfair Display + Merriweather)
    ============================================================ */
 
 @theme {
-  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+  --font-serif: 'Playfair Display', 'Merriweather', Georgia, serif;
+  --font-sans: 'Merriweather', 'Lora', Georgia, serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+body, p, li, a, span, button, input, textarea {
+  font-family: 'Merriweather', 'Lora', Georgia, serif;
+  color: #1f2937;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
+  font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
 }
 
 /* ---- shared keyframes (originally inline in index.html) ---- */
@@ -80,8 +83,7 @@ body {
   background: linear-gradient(to left, #f8fafc, transparent);
 }
 
-/* ---- missing Tailwind utilities (were patched into the old
-       compiled stylesheet; kept here unlayered so they always apply) ---- */
+/* ---- missing Tailwind utilities ---- */
 .w-16 { width: 4rem; }
 .mt-6 { margin-top: 1.5rem; }
 .pr-3 { padding-right: 0.75rem; }
@@ -141,7 +143,7 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* ---- Navigation font matching satarapolytechnicsatara.com ---- */
+/* ---- Navigation font matching spssatara.com ---- */
 header,
 header a,
 header span,
@@ -149,7 +151,5 @@ header button,
 header ul,
 header li,
 .sps-nav-link {
-  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, sans-serif !important;
-  font-weight: 500 !important;
+  font-family: 'Merriweather', 'Playfair Display', Georgia, serif !important;
 }
-
