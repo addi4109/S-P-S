@@ -14,19 +14,19 @@ export default function About() {
 
         <div className="max-w-5xl mx-auto text-center relative z-10 space-y-6">
           {/* Jai Jagat, Jai Bharat Theme Motto Badge */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-amber-400/40 bg-amber-500/10 text-amber-300 font-serif text-sm md:text-base tracking-widest uppercase shadow-sm">
+          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-amber-400/50 bg-amber-500/15 font-serif text-sm md:text-base tracking-widest uppercase shadow-sm">
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <span>{t('quoteFull', '“Jai Jagat, Jai Bharat”')}</span>
+            <span style={{ color: '#fbbf24' }}>{t('quoteFull', '“Jai Jagat, Jai Bharat”')}</span>
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
           </div>
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight tracking-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight" style={{ color: '#ffffff' }}>
             {t('heroTitle', 'Over 40+ Years of Educational Excellence')}
           </h1>
 
           <div className="w-24 h-1 bg-amber-400 mx-auto rounded-full" />
 
-          <p className="text-lg md:text-2xl text-slate-200 font-serif max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-2xl font-serif max-w-3xl mx-auto leading-relaxed" style={{ color: '#f1f5f9' }}>
             {t('heroSubtitle', 'The Birth of a Legend — Universal Vision & National Service')}
           </p>
         </div>
@@ -50,13 +50,13 @@ export default function About() {
         {/* Motto Section Card */}
         <div className="bg-[#0d1527] text-white border border-blue-900/80 rounded-2xl py-12 px-8 text-center shadow-xl relative overflow-hidden">
           <div className="max-w-3xl mx-auto space-y-4">
-            <h3 className="text-amber-400 text-sm md:text-base font-semibold tracking-widest uppercase font-serif">
+            <h3 className="text-sm md:text-base font-semibold tracking-widest uppercase font-serif" style={{ color: '#fbbf24' }}>
               {t('mottoLabel', 'Institutional Philosophy')}
             </h3>
-            <blockquote className="text-3xl md:text-5xl font-serif font-bold text-white tracking-wide italic">
+            <blockquote className="text-3xl md:text-5xl font-serif font-bold tracking-wide italic" style={{ color: '#ffffff' }}>
               {t('quote1', '“Jai Jagat,')}{' '}{t('quote2', 'Jai Bharat.”')}
             </blockquote>
-            <p className="text-slate-300 font-serif text-sm md:text-base max-w-xl mx-auto leading-relaxed pt-2">
+            <p className="font-serif text-base md:text-lg max-w-xl mx-auto leading-relaxed pt-2" style={{ color: '#f1f5f9' }}>
               {t('mottoMeaning', 'Embodying universal harmony and dedicated service to our nation through transformative technical education.')}
             </p>
           </div>

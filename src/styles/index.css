@@ -16,9 +16,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body, p, li, a, span, button, input, textarea {
+body {
   font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   color: #1f2937;
+}
+
+p, li, a, span, button, input, textarea {
+  font-family: inherit;
 }
 
 h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
