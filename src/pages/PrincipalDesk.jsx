@@ -6,53 +6,56 @@ export default function PrincipalDesk() {
   const { t, img } = usePageContent('principalDesk')
 
   return (
-    <section className="bg-[#f4faff] min-h-screen pt-20 pb-16 text-gray-800">
-      {/* Hero Header Banner */}
-      <div className="w-full bg-[#0d1527] text-white py-14 px-6 text-center mb-10 shadow-md">
-        <h1 className="text-3xl md:text-5xl font-serif font-bold tracking-wide">
-          {t('heroHeading', 'Principal’s Desk')}
-        </h1>
-        <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full" />
-      </div>
+    <section className="bg-[#f7f5f0] min-h-screen pt-28 pb-20 text-gray-800 font-serif">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        {/* Title & Underline */}
+        <div className="text-center mb-14">
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-900 tracking-wide">
+            {t('heroHeading', 'Principal’s Desk')}
+          </h1>
+          <div className="w-16 h-0.5 bg-gray-800 mx-auto mt-3" />
+        </div>
 
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="bg-white rounded-2xl shadow-xl border border-blue-100/60 p-8 md:p-14">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="flex justify-center">
-              <div className="bg-white p-3 shadow-md rounded-2xl border border-blue-100">
-                <img
-                  alt={t('principalAlt', 'Principal')}
-                  className="w-72 h-96 object-cover rounded-xl"
-                  src={img('principalImage', '/assets/images/principal.jpg')}
-                  loading="lazy"
-                />
-              </div>
+        {/* Content Section: 2 Columns */}
+        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+          {/* Left Column: Image */}
+          <div className="md:col-span-5 flex justify-center">
+            <div className="bg-white p-2 border border-gray-200 shadow-sm rounded-sm">
+              <img
+                alt={t('principalAlt', 'Principal')}
+                className="w-full max-w-md h-auto object-cover"
+                src={img('principalImage', '/assets/images/principal.jpg')}
+                loading="lazy"
+              />
             </div>
-            <div className="text-gray-800">
-              <h2 className="text-2xl font-serif font-bold text-blue-950 mb-4">
-                {t('sectionHeading', 'Message from the Principal')}
-              </h2>
-              <p className="leading-relaxed mb-4 text-base md:text-lg text-gray-700">
-                {t('message1', 'Welcome to our institution, a place where tradition meets excellence and education is shaped with values, discipline, and integrity. Our college stands as a pillar of academic distinction, nurturing young minds to become responsible professionals and conscientious citizens.')}
-              </p>
-              <p className="leading-relaxed mb-4 text-base md:text-lg text-gray-700">
-                {t('message2', 'We believe education is not merely the acquisition of knowledge, but the cultivation of character, leadership, and lifelong learning. Through dedicated faculty, modern infrastructure, and a student-centered approach, we strive to prepare our students for global challenges.')}
-              </p>
-              <p className="leading-relaxed mb-6 text-base md:text-lg text-gray-700">
-                {t('message3', 'I invite you to be a part of our academic journey and experience an environment that inspires growth, innovation, and excellence.')}
-              </p>
-              <div className="border-t border-blue-200/80 pt-6">
-                <p className="font-serif font-bold text-xl text-blue-950">
-                  {t('principalName', 'Mr. A. V. Gaikwad')}
-                </p>
-                <p className="text-sm font-medium text-gray-600 tracking-wide mt-1">
-                  {t('principalQualification', 'ME (Mechanical)')}
-                  <br />
-                  {t('principalTitle', 'Principal')}
-                </p>
-                <p className="text-sm text-gray-500">{t('principalInstitution', 'Satara Polytechnic Satara')}</p>
-              </div>
-            </div>
+          </div>
+
+          {/* Right Column: Message */}
+          <div className="md:col-span-7 space-y-6 text-gray-700 leading-relaxed text-base md:text-lg pt-1">
+            <h2 className="text-2xl md:text-3xl font-serif text-gray-900 mb-4">
+              {t('sectionHeading', 'Message from the Principal')}
+            </h2>
+
+            <p>
+              {t(
+                'message1',
+                'Welcome to our institution, a place where tradition meets excellence and education is shaped with values, discipline, and integrity. Our college stands as a pillar of academic distinction, nurturing young minds to become responsible professionals and conscientious citizens.'
+              )}
+            </p>
+
+            <p>
+              {t(
+                'message2',
+                'We believe education is not merely the acquisition of knowledge, but the cultivation of character, leadership, and lifelong learning. Through dedicated faculty, modern infrastructure, and a student-centered approach, we strive to prepare our students for global challenges.'
+              )}
+            </p>
+
+            <p>
+              {t(
+                'message3',
+                'I invite you to be a part of our academic journey and experience an environment that inspires growth, innovation, and excellence.'
+              )}
+            </p>
           </div>
         </div>
       </div>
