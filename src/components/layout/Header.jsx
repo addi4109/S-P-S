@@ -12,14 +12,12 @@ const deptItems = departments.map((d) => ({
 
 /** Shared classes for nav links/spans, coloured per header variant. */
 function navItemClass(variant, isActive = false, scrolled = false) {
-  const border = (variant === 'home' && !scrolled) ? 'border-white' : 'border-gray-300'
-  const isBlue = isActive && (variant !== 'home' || scrolled)
-  const color = isBlue
-    ? 'text-blue-600'
-    : (variant === 'home' && !scrolled)
-      ? 'text-white'
-      : 'text-gray-900'
-  return `sps-nav-link border-x px-2.5 transition hover:text-blue-600 font-medium text-[16px] tracking-normal ${border} ${color}`
+  const isTransparent = variant === 'home' && !scrolled
+  const border = isTransparent ? 'border-white/80' : 'border-gray-300'
+  const color = isTransparent
+    ? 'text-white'
+    : (isActive ? 'text-blue-600 font-semibold' : 'text-gray-900')
+  return `sps-nav-link border-x px-2.5 transition hover:opacity-90 font-medium text-[16px] tracking-normal ${border} ${color}`
 }
 
 function Dropdown({ variant, item, scrolled }) {

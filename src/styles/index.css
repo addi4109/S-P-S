@@ -143,6 +143,13 @@ h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
+#home-header:not(.scrolled) a,
+#home-header:not(.scrolled) span,
+#home-header:not(.scrolled) h3,
+#home-header:not(.scrolled) button {
+  color: #ffffff !important;
+}
+
 /* ---- Navigation font matching spssatara.com ---- */
 header,
 header a,

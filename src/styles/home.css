@@ -62,11 +62,18 @@ html { scroll-behavior: smooth; }
 
 /* ---- scroll-aware header ---- */
 #home-header.scrolled {
-  background-color: rgba(235,249,255,.9) !important;
+  background-color: rgba(235,249,255,.95) !important;
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 #home-header.scrolled * { color: #111827 !important; }
 #home-header.scrolled a { border-color: #d1d5db !important; }
 #home-header.scrolled .rounded-bl-full { border-color: #d1d5db !important; }
+
+#home-header:not(.scrolled) a,
+#home-header:not(.scrolled) span,
+#home-header:not(.scrolled) h3,
+#home-header:not(.scrolled) button {
+  color: #ffffff !important;
+}
 
