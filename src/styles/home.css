@@ -70,4 +70,3 @@ html { scroll-behavior: smooth; }
 #home-header.scrolled a { border-color: #d1d5db !important; }
 #home-header.scrolled .rounded-bl-full { border-color: #d1d5db !important; }
 
-[style*="opacity: 0"] { opacity: 1 !important; }
