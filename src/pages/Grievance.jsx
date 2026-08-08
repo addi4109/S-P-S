@@ -6,15 +6,19 @@ export default function Grievance() {
   const { t, img, tList } = usePageContent('grievance')
 
   return (
-    <>
-      <section className="w-full bg-gray-50 py-16 px-4 mt-30 md:mt-28" style={{ opacity: 1 }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">{t('heroTitle', 'College Grievance Redressal Cell')}</h1>
-            <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
-              {t('heroSubtitle', 'Ensuring a secure and harmonious environment for all Staff and Students.')}
-            </p>
-          </div>
+    <section className="w-full bg-[#f4faff] min-h-screen pt-20 pb-16 text-gray-800">
+      {/* Hero Header Banner */}
+      <div className="w-full bg-[#0d1527] text-white py-14 px-6 text-center mb-10 shadow-md">
+        <h1 className="text-3xl md:text-5xl font-serif font-bold text-white mb-3">
+          {t('heroTitle', 'College Grievance Redressal Cell')}
+        </h1>
+        <div className="w-24 h-1 bg-blue-500 mx-auto mt-3 rounded-full" />
+        <p className="mt-4 text-base md:text-lg font-serif text-slate-300 max-w-3xl mx-auto">
+          {t('heroSubtitle', 'Ensuring a secure and harmonious environment for all Staff and Students.')}
+        </p>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 space-y-8">
 
           <div className="bg-white shadow-lg rounded-2xl p-8 mb-12">
             <h2 className="text-2xl font-semibold mb-4">{t('introHeading', 'Introduction')}</h2>
@@ -265,8 +269,7 @@ export default function Grievance() {
               {t('studentText', 'All students enrolled at Satara Polytechnic Satara have the right to appeal any academic matter in which they feel unfairly treated.')}
             </p>
           </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }

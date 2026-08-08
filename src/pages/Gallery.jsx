@@ -30,10 +30,10 @@ export default function Gallery() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#ebf9ff] mt-24 px-6 py-14 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Campus Gallery</h1>
-        <div className="w-24 h-0.5 bg-amber-700 mx-auto mt-4 rounded-full" />
-        <p className="text-gray-700 mt-5 max-w-3xl mx-auto text-lg leading-relaxed">
+      <section className="bg-[#0d1527] pt-28 pb-14 px-6 text-center text-white shadow-md">
+        <h1 className="text-3xl md:text-5xl font-serif font-bold text-white">Campus Gallery</h1>
+        <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full" />
+        <p className="text-slate-300 font-serif mt-4 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
           Moments that define our vibrant community — cultural celebrations, alumni reunions,
           service camps and everything in between.
         </p>

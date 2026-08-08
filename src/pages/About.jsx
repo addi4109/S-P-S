@@ -9,7 +9,7 @@ export default function About() {
     <section className="bg-[#f4faff] min-h-screen pt-24 pb-16 px-4 md:px-12 text-gray-800">
       <div className="max-w-6xl mx-auto space-y-10">
         {/* Hero */}
-        <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white rounded-2xl shadow-xl p-10 md:p-16 text-center">
+        <div className="bg-[#0d1527] text-white rounded-2xl shadow-xl p-10 md:p-16 text-center">
           <h1 className="text-3xl md:text-5xl font-serif font-bold mb-4 leading-tight">
             {t('heroTitle', 'Over 40+ Years of Educational Excellence')}
           </h1>

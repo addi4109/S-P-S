@@ -3,25 +3,25 @@ import { usePageContent } from '../hooks/usePageContent'
 
 export default function Placement() {
   usePageTitle('Placement')
-  const { t, img } = usePageContent('placement')
+  const { t } = usePageContent('placement')
 
   return (
-    <section className="bg-[#f4faff] min-h-screen pt-28 pb-16 px-4 md:px-12 text-gray-800">
-      <div className="max-w-5xl mx-auto space-y-8">
-        {/* Hero */}
-        <div className="bg-white rounded-2xl shadow-xl border border-blue-100/60 p-8 md:p-12 text-center">
-          <h1 className="text-3xl md:text-5xl font-serif font-bold text-blue-950 tracking-wide">
-            {t('heroTitle', 'College Placement Cell')}
-          </h1>
-          <div className="w-24 h-1 bg-blue-600 mx-auto my-4 rounded-full" />
-          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed text-base md:text-lg">
-            {t(
-              'heroSubtitle',
-              'Cultivating professional excellence through heritage values, strategic industry alliances, and refined career guidance.'
-            )}
-          </p>
-        </div>
+    <section className="bg-[#f4faff] min-h-screen pt-20 pb-16 text-gray-800">
+      {/* Hero Header Banner */}
+      <div className="w-full bg-[#0d1527] text-white py-14 px-6 text-center mb-10 shadow-md">
+        <h1 className="text-3xl md:text-5xl font-serif font-bold text-white tracking-wide">
+          {t('heroTitle', 'College Placement Cell')}
+        </h1>
+        <div className="w-24 h-1 bg-blue-500 mx-auto my-4 rounded-full" />
+        <p className="text-slate-300 max-w-3xl mx-auto leading-relaxed text-base md:text-lg font-serif">
+          {t(
+            'heroSubtitle',
+            'Cultivating professional excellence through heritage values, strategic industry alliances, and refined career guidance.'
+          )}
+        </p>
+      </div>
 
+      <div className="max-w-5xl mx-auto px-4 space-y-8">
         {/* Intro */}
         <div className="bg-white rounded-2xl shadow-lg border border-blue-100/60 p-8 md:p-10">
           <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700 mb-3">
@@ -112,7 +112,7 @@ export default function Placement() {
               <p><span className="font-semibold text-gray-900">{t('mobileCol1', 'Sr. No:')}</span> {t('compRow3Col1', '3')}</p>
               <p><span className="font-semibold text-gray-900">{t('mobileCol2', 'Name:')}</span> {t('compRow3Col2', 'Ms. K.S. Sable')}</p>
               <p><span className="font-semibold text-gray-900">{t('mobileCol3', 'Designation:')}</span> {t('compRow3Col3', 'HOD – CO')}</p>
-              <p><span className="font-semibold text-gray-900">{t('mobileCol4', 'Position:')}</span> {t('compRow3Col4', 'Member')}</p>
+              <p><span className="font-semibold text-gray-900">{t('mobileCol4', 'Position:')}</span> {t('compRow4Col4', 'Member')}</p>
             </div>
             <div className="bg-blue-50/60 border border-blue-200/70 rounded-xl p-4 space-y-1">
               <p><span className="font-semibold text-gray-900">{t('mobileCol1', 'Sr. No:')}</span> {t('compRow4Col1', '4')}</p>

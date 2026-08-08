@@ -39,9 +39,9 @@ export default function Notice() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gray-900 mt-24 py-20 px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 fade-up">Notice Board</h1>
-        <p className="text-xl text-white fade-up fade-up-d1" style={{ opacity: 0.9 }}>
+      <section className="bg-[#0d1527] pt-28 pb-16 px-6 text-center shadow-md">
+        <h1 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4 fade-up">Notice Board</h1>
+        <p className="text-lg md:text-xl font-serif text-slate-300 max-w-2xl mx-auto fade-up fade-up-d1">
           Official notices, circulars and announcements from Satara Polytechnic Satara.
         </p>
       </section>
