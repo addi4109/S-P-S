@@ -8,45 +8,38 @@ export default function About() {
   return (
     <div className="bg-[#f4faff] min-h-screen text-gray-800 font-sans">
       {/* ── 1. Full-Width Hero Section ── */}
-      <section className="w-full bg-[#0d1527] text-white pt-28 md:pt-36 pb-20 px-6 shadow-xl relative overflow-hidden">
-        {/* Subtle background ambient glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/40 via-transparent to-transparent pointer-events-none" />
-
-        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-6">
-          {/* Jai Jagat, Jai Bharat Theme Motto Badge */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-amber-400/50 bg-amber-500/15 font-serif text-sm md:text-base tracking-widest uppercase shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <span style={{ color: '#fbbf24' }}>{t('quoteFull', '“Jai Jagat, Jai Bharat”')}</span>
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-          </div>
-
+      <section className="w-full bg-[#0d1527] text-white pt-28 md:pt-36 pb-14 px-6 shadow-xl relative overflow-hidden text-center">
+        <div className="max-w-5xl mx-auto space-y-4">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight" style={{ color: '#ffffff' }}>
             {t('heroTitle', 'Over 40+ Years of Educational Excellence')}
           </h1>
 
-          <div className="w-24 h-1 bg-amber-400 mx-auto rounded-full" />
-
-          <p className="text-lg md:text-2xl font-serif max-w-3xl mx-auto leading-relaxed" style={{ color: '#f1f5f9' }}>
-            {t('heroSubtitle', 'The Birth of a Legend — Universal Vision & National Service')}
+          <p className="text-xl md:text-2xl font-serif pt-4" style={{ color: '#ffffff' }}>
+            {t('heroSubtitle', 'The Birth of a Legend')}
           </p>
         </div>
       </section>
 
-      {/* ── 2. Main Page Content ── */}
-      <div className="max-w-6xl mx-auto px-4 md:px-12 py-16 space-y-12">
-        {/* History */}
-        <div className="bg-white rounded-2xl shadow-lg border border-blue-100/60 p-8 md:p-12 space-y-6">
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-blue-950">
-            {t('historyHeading', 'Our Rich Heritage')}
-          </h2>
-          <p className="text-base md:text-lg leading-relaxed text-gray-700">
-            {t('history1', 'In the early 1980s, establishing non-grant technical education in semi-urban regions like Satara was a formidable challenge. Access to quality professional education was limited, and the philosophy of self-financed institutions was still in its infancy. During this crucial period, with the blessings and guidance of Hon. Shri K. S. Patil (Ex. MLA), the foundation of our institute was laid in 1983 under the aegis of Satara Education Society. The vision was boldly carried forward by pioneering mentors of the Society—Hon. M. L. Wadikar, Late D. S. Kulkarni, Late H. L. Ekbote, and other dedicated educationists—who conceived and implemented progressive and revolutionary ideas to make quality education accessible in the region. Their efforts received strong support from Hon. Shri N. J. Palkar (Ex. Chairman, Satara Education Society, Satara) and were effectively translated into reality under the leadership of Shri G. M. Deshmukh, the first Principal of the institute')}
+      {/* ── 2. History Paragraphs (No card, No heading title) ── */}
+      <section className="w-full bg-white py-16 px-6 border-b border-blue-100/60">
+        <div className="max-w-5xl mx-auto space-y-8 text-base md:text-lg leading-relaxed text-gray-700">
+          <p>
+            {t(
+              'history1',
+              'In the early 1980s, establishing non-grant technical education in semi-urban regions like Satara was a formidable challenge. Access to quality professional education was limited, and the philosophy of self-financed institutions was still in its infancy. During this crucial period, with the blessings and guidance of Hon. Shri K. S. Patil (Ex. MLA), the foundation of our institute was laid in 1983 under the aegis of Satara Education Society. The vision was boldly carried forward by pioneering mentors of the Society—Hon. M. L. Wadikar, Late D. S. Kulkarni, Late H. L. Ekbote, and other dedicated educationists—who conceived and implemented progressive and revolutionary ideas to make quality education accessible in the region. Their efforts received strong support from Hon. Shri N. J. Palkar (Ex. Chairman, Satara Education Society, Satara) and were effectively translated into reality under the leadership of Shri G. M. Deshmukh, the first Principal of the institute'
+            )}
           </p>
-          <p className="text-base md:text-lg leading-relaxed text-gray-700">
-            {t('history2', 'Through perseverance, commitment, and academic discipline, the institute steadily grew in stature and reputation. Today, it stands proudly as one of the leading institutes in the state, known for its academic excellence and strong value system. The entire faculty and staff take immense pride in carrying forward this rich legacy and upholding the vision laid down by our founders.')}
+          <p>
+            {t(
+              'history2',
+              'Through perseverance, commitment, and academic discipline, the institute steadily grew in stature and reputation. Today, it stands proudly as one of the leading institutes in the state, known for its academic excellence and strong value system. The entire faculty and staff take immense pride in carrying forward this rich legacy and upholding the vision laid down by our founders.'
+            )}
           </p>
         </div>
+      </section>
 
+      {/* ── 3. Rest of About Page Content ── */}
+      <div className="max-w-6xl mx-auto px-4 md:px-12 py-16 space-y-12">
         {/* Motto Section Card */}
         <div className="bg-[#0d1527] text-white border border-blue-900/80 rounded-2xl py-12 px-8 text-center shadow-xl relative overflow-hidden">
           <div className="max-w-3xl mx-auto space-y-4">
