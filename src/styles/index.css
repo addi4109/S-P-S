@@ -1,29 +1,31 @@
 @import "tailwindcss";
 
 /* ============================================================
-   SPS — global styles & Serif typography system
-   (Matching spssatara.com typography: Playfair Display + Merriweather)
+   SPS — Global Premium Modern Typography System
+   (Plus Jakarta Sans + Outfit + Inter)
    ============================================================ */
 
 @theme {
-  --font-serif: 'Playfair Display', 'Merriweather', Georgia, serif;
-  --font-sans: 'Merriweather', 'Lora', Georgia, serif;
+  --font-serif: 'Plus Jakarta Sans', 'Outfit', 'Playfair Display', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body, p, li, a, span, button, input, textarea {
-  font-family: 'Merriweather', 'Lora', Georgia, serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   color: #1f2937;
 }
 
 h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
-  font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
 }
 
-/* ---- shared keyframes (originally inline in index.html) ---- */
+/* ---- shared keyframes ---- */
 @keyframes slide {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
@@ -168,7 +170,7 @@ header .group ul a:hover {
   color: #2563eb !important;
 }
 
-/* ---- Navigation font matching spssatara.com ---- */
+/* ---- Modern Navigation font ---- */
 header,
 header a,
 header span,
@@ -176,7 +178,7 @@ header button,
 header ul,
 header li,
 .sps-nav-link {
-  font-family: 'Merriweather', 'Playfair Display', Georgia, serif !important;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif !important;
 }
 
 /* ---- Footer pure white text enforcement ---- */
