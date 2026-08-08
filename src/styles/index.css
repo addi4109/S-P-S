@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SPS — global styles
+   Base font + keyframes + component classes that were inline in
+   the original static pages. `legacy.css` (the compiled Tailwind
+   output from the original build) is imported after this file in
+   main.jsx to guarantee every historical utility class resolves.
+   ============================================================ */
+
+@theme {
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---- shared keyframes (originally inline in index.html) ---- */
+@keyframes slide {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+@keyframes slide-logos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+/* ---- department card (home) ---- */
+.dept-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.dept-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* ---- ticker ---- */
+.ticker-wrap {
+  overflow: hidden;
+}
+
+/* ---- recruiters marquee ---- */
+.recruiters-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.recruiters-wrap::before,
+.recruiters-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.recruiters-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #f8fafc, transparent);
+}
+.recruiters-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #f8fafc, transparent);
+}
+
+/* ---- missing Tailwind utilities (were patched into the old
+       compiled stylesheet; kept here unlayered so they always apply) ---- */
+.w-16 { width: 4rem; }
+.mt-6 { margin-top: 1.5rem; }
+.pr-3 { padding-right: 0.75rem; }
+.py-2\.5 { padding-block: 0.625rem; }
+.py-8 { padding-block: 2rem; }
+.max-w-sm { max-width: 24rem; }
+.space-y-3 > :not(:last-child) { margin-bottom: 0.75rem; }
+.bg-\[\#f8fafc\] { background-color: #f8fafc; }
+@media (min-width: 640px) {
+  .sm\:h-16 { height: 4rem; }
+  .sm\:h-32 { height: 8rem; }
+  .sm\:gap-12 { gap: 3rem; }
+}
+@media (min-width: 768px) {
+  .md\:h-20 { height: 5rem; }
+  .md\:h-40 { height: 10rem; }
+}
+@media (min-width: 1024px) {
+  .lg\:h-24 { height: 6rem; }
+  .lg\:mt-28 { margin-top: 7rem; }
+  .lg\:px-10 { padding-inline: 2.5rem; }
+}
+@media (max-width: 720px) {
+  .max-\[720px\]\:mt-2 { margin-top: 0.5rem; }
+  .max-\[720px\]\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+}
+.animate-\[slide-logos_25s_linear_infinite\] { animation: slide-logos 25s linear infinite; }
+
+/* ---- hero slider ---- */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+}
+@media (min-width: 768px) {
+  .hero-slide { object-fit: cover; }
+}
+.h-\[60vh\] { height: 60vh; }
+@media (min-width: 640px) {
+  .sm\:h-\[70vh\] { height: 70vh; }
+}
+@media (min-width: 768px) {
+  .md\:h-\[80vh\] { height: 80vh; }
+}
+
+/* ---- scroll-aware transparent header (home) ---- */
+#home-header {
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+#home-header a,
+#home-header span,
+#home-header h3,
+#home-header button {
+  transition: color 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
+}
+#home-header.scrolled {
+  background-color: rgba(235, 249, 255, 0.95) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ---- Navigation font matching satarapolytechnicsatara.com ---- */
+header,
+header a,
+header span,
+header button,
+header ul,
+header li,
+.sps-nav-link {
+  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, sans-serif !important;
+  font-weight: 500 !important;
+}
+

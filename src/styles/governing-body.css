@@ -1,0 +1,13 @@
+/* Page-specific styles extracted from gb.html */
+
+    .inline-block { display: inline-block; }
+    .flex-shrink-0 { flex-shrink: 0; }
+    .w-16 { width: 4rem; }
+    .max-w-2xl { max-width: 42rem; }
+    .border-3 { border-width: 3px; }
+    .border-gray-100 { border-color: #f3f4f6; }
+    .from-indigo-400 { --tw-gradient-from: #818cf8; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+    .to-purple-400 { --tw-gradient-to: #c084fc; }
+    @media (hover: hover) { .hover\:shadow-md:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1); } }
+    .group:hover .group-hover\:border-indigo-300 { border-color: #a5b4fc; }
+  
