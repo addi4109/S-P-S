@@ -6,24 +6,24 @@ export default function PrincipalDesk() {
   const { t, img } = usePageContent('principalDesk')
 
   return (
-    <section className="bg-[#f7f5f0] min-h-screen pt-36 md:pt-44 pb-24 text-gray-800 font-serif">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
-        {/* Title & Underline with generous top padding */}
-        <div className="text-center mb-16 pt-4">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-900 tracking-wide">
+    <section className="bg-[#f7f5f0] min-h-screen pt-24 md:pt-28 pb-12 text-gray-800 font-serif flex flex-col justify-center">
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 w-full">
+        {/* Title & Underline */}
+        <div className="text-center mb-8 md:mb-10">
+          <h1 className="text-3xl md:text-4xl font-serif text-gray-900 tracking-wide">
             {t('heroHeading', 'Principal’s Desk')}
           </h1>
-          <div className="w-16 h-0.5 bg-gray-800 mx-auto mt-3" />
+          <div className="w-16 h-0.5 bg-gray-800 mx-auto mt-2.5" />
         </div>
 
-        {/* Content Section: 2 Columns stretching to equal height */}
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-stretch">
-          {/* Left Column: Image stretched to tall stately height */}
-          <div className="md:col-span-5 flex flex-col justify-center">
-            <div className="w-full h-full bg-white p-2.5 border border-gray-200 shadow-sm rounded-sm flex flex-col">
+        {/* Content Section: 2 Columns */}
+        <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+          {/* Left Column: Image */}
+          <div className="md:col-span-5 flex justify-center">
+            <div className="bg-white p-2 border border-gray-200 shadow-sm rounded-md">
               <img
                 alt={t('principalAlt', 'Principal')}
-                className="w-full h-full min-h-[500px] md:min-h-[600px] lg:min-h-[640px] object-cover"
+                className="w-full max-w-[320px] md:max-w-none h-[340px] md:h-[390px] object-cover rounded-xs"
                 src={img('principalImage', '/assets/images/principal.jpg')}
                 loading="lazy"
               />
@@ -31,8 +31,8 @@ export default function PrincipalDesk() {
           </div>
 
           {/* Right Column: Message */}
-          <div className="md:col-span-7 space-y-7 text-gray-700 leading-relaxed text-base md:text-xl flex flex-col justify-center">
-            <h2 className="text-2xl md:text-3xl font-serif text-gray-900 mb-2">
+          <div className="md:col-span-7 space-y-3.5 text-gray-700 leading-relaxed text-sm md:text-base">
+            <h2 className="text-xl md:text-2xl font-serif text-gray-900 mb-2">
               {t('sectionHeading', 'Message from the Principal')}
             </h2>
 
