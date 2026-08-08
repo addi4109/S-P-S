@@ -4,7 +4,7 @@ import { heroSlides as staticSlides } from '../../data/heroSlides'
 
 /**
  * HeroSlider — full-width campus photo crossfader.
- * Features smooth fade-in and fade-out animations with interactive slide indicators.
+ * Features smooth fade-in and fade-out animations.
  */
 export default function HeroSlider() {
   const { data } = useResource('hero', staticSlides)
@@ -53,24 +53,6 @@ export default function HeroSlider() {
           </div>
         )
       })}
-
-      {/* Slide Indicator Dots */}
-      {total > 1 && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`h-2.5 rounded-full transition-all duration-500 cursor-pointer ${
-                i === active % total
-                  ? 'w-7 bg-white shadow-sm'
-                  : 'w-2.5 bg-white/50 hover:bg-white/80'
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
-      )}
     </div>
   )
 }
