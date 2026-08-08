@@ -15,64 +15,78 @@ export default function Footer() {
           loading="lazy"
         />
       </div>
-      <footer className="bg-[#0d1527] text-white px-4 sm:px-6 lg:px-12 py-12 font-serif">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <footer className="bg-[#0b1220] text-white px-6 lg:px-16 py-14 font-serif">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+          {/* Column 1 */}
           <div>
-            <h3 className="text-white text-base sm:text-lg font-bold uppercase tracking-wider mb-3">
+            <h2 className="text-white text-base md:text-lg font-bold tracking-wide mb-2 uppercase">
+              {t('experienceHeading', 'EXPERIENCE MORE.')}
+            </h2>
+            <p className="text-white text-sm font-semibold tracking-wider">
               {t('followUsLabel', 'FOLLOW US')}
-            </h3>
+            </p>
           </div>
+
+          {/* Column 2 */}
           <div>
-            <h3 className="text-white font-bold text-base sm:text-lg mb-3">
+            <h3 className="text-white font-bold text-base md:text-lg mb-3">
               {t('noticeBoardHeading', 'Notice Board')}
             </h3>
-            <p className="text-sm font-semibold text-white mb-1">{t('spsCampusLabel', 'SPS Campus :')}</p>
-            <p className="text-sm text-white leading-relaxed mb-4">{t('address', siteConfig.address)}</p>
+            <p className="text-sm font-semibold text-white mb-1">
+              {t('spsCampusLabel', 'SPS Campus :')}
+            </p>
+            <p className="text-sm text-slate-200 leading-relaxed">
+              {t('address', siteConfig.address)}
+            </p>
           </div>
+
+          {/* Column 3 */}
           <div>
-            <h3 className="text-white font-bold text-base sm:text-lg mb-3">
+            <h3 className="text-white font-bold text-base md:text-lg mb-3">
               {t('quickLinksHeading', 'Quick Links')}
             </h3>
-            <ul className="space-y-2 text-sm text-white">
+            <ul className="space-y-2 text-sm text-slate-200">
               <li>
-                <Link className="text-white hover:underline transition-all" to="/about">
+                <Link className="hover:text-white transition-colors" to="/about">
                   {t('quickAbout', 'About')}
                 </Link>
               </li>
               <li>
-                <Link className="text-white hover:underline transition-all" to="/departments">
+                <Link className="hover:text-white transition-colors" to="/departments">
                   {t('quickDepartments', 'Departments')}
                 </Link>
               </li>
               <li>
-                <Link className="text-white hover:underline transition-all" to="/admission">
+                <Link className="hover:text-white transition-colors" to="/admission">
                   {t('quickAdmissions', 'Admissions')}
                 </Link>
               </li>
               <li>
-                <Link className="text-white hover:underline transition-all" to="/placement">
+                <Link className="hover:text-white transition-colors" to="/placement">
                   {t('quickPlacements', 'Placements')}
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* Column 4 */}
           <div>
-            <h3 className="text-white font-bold text-base sm:text-lg mb-3">
+            <h3 className="text-white font-bold text-base md:text-lg mb-3">
               {t('moreInfoHeading', 'More Info')}
             </h3>
-            <ul className="space-y-2 text-sm text-white">
+            <ul className="space-y-2 text-sm text-slate-200">
               <li>
-                <Link className="text-white hover:underline transition-all" to="/admin">
+                <Link className="hover:text-white transition-colors" to="/admin">
                   {t('moreAdminLogin', 'Admin Login')}
                 </Link>
               </li>
               <li>
-                <Link className="text-white hover:underline transition-all" to="/contact">
+                <Link className="hover:text-white transition-colors" to="/contact">
                   {t('moreContactUs', 'Contact Us')}
                 </Link>
               </li>
               <li>
-                <Link className="text-white hover:underline transition-all" to="/grievance">
+                <Link className="hover:text-white transition-colors" to="/grievance">
                   {t('moreGrievancesCell', 'Grievances Cell')}
                 </Link>
               </li>
@@ -80,23 +94,32 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 max-w-6xl mx-auto my-8" />
+        {/* Divider */}
+        <div className="border-t border-white/10 max-w-7xl mx-auto my-10" />
 
-        <div className="max-w-6xl mx-auto text-center space-y-3 text-sm text-white">
-          <p>
-            <span className="text-white font-semibold">{t('officeTimingsLabel', 'Office Timings:')}</span><br />
-            {t('officeTimings', siteConfig.officeTimings)}
-          </p>
-          <div className="space-y-0.5 pt-1 text-white">
+        {/* Bottom Bar: 3 columns flex-row justify-between on desktop */}
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-slate-200 gap-6 md:gap-0">
+          {/* Left */}
+          <div className="text-center md:text-left">
+            <p className="font-semibold text-white mb-0.5">{t('officeTimingsLabel', 'Office Timings:')}</p>
+            <p>{t('officeTimings', siteConfig.officeTimings)}</p>
+          </div>
+
+          {/* Middle */}
+          <div className="text-center">
             {tList('phones', siteConfig.phones).map((p) => (
-              <p key={p} className="text-white font-medium">{p}</p>
+              <p key={p} className="font-medium text-white">{p}</p>
             ))}
           </div>
-          <p className="pt-2 text-white">{t('copyright', `All Rights Reserved © SPS, ${siteConfig.copyrightYear}`)}</p>
-          <p className="text-xs text-white">
-            {t('builtByLabel', 'Built by')}{' '}
-            <span className="font-bold text-white">{t('builtBy', siteConfig.builtBy)}</span>
-          </p>
+
+          {/* Right */}
+          <div className="text-center md:text-right space-y-1">
+            <p>{t('copyright', `All Rights Reserved © SPS, ${siteConfig.copyrightYear}`)}</p>
+            <p className="text-xs">
+              {t('builtByLabel', 'Built by')}{' '}
+              <span className="font-bold text-white">{t('builtBy', siteConfig.builtBy)}</span>
+            </p>
+          </div>
         </div>
       </footer>
     </>
