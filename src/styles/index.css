@@ -160,3 +160,26 @@ header li,
 .sps-nav-link {
   font-family: 'Merriweather', 'Playfair Display', Georgia, serif !important;
 }
+
+/* ---- Footer pure white text enforcement ---- */
+footer,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer p,
+footer span,
+footer a,
+footer li,
+footer div {
+  color: #ffffff !important;
+}
+
+footer a {
+  opacity: 0.95;
+}
+
+footer a:hover {
+  opacity: 1 !important;
+  text-decoration: underline !important;
+}

@@ -35,7 +35,7 @@ export default function Footer() {
             <p className="text-sm font-semibold text-white mb-1">
               {t('spsCampusLabel', 'SPS Campus :')}
             </p>
-            <p className="text-sm text-slate-200 leading-relaxed">
+            <p className="text-sm text-white leading-relaxed">
               {t('address', siteConfig.address)}
             </p>
           </div>
@@ -45,24 +45,24 @@ export default function Footer() {
             <h3 className="text-white font-bold text-base md:text-lg mb-3">
               {t('quickLinksHeading', 'Quick Links')}
             </h3>
-            <ul className="space-y-2 text-sm text-slate-200">
+            <ul className="space-y-2 text-sm text-white">
               <li>
-                <Link className="hover:text-white transition-colors" to="/about">
+                <Link className="text-white hover:underline transition-all" to="/about">
                   {t('quickAbout', 'About')}
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/departments">
+                <Link className="text-white hover:underline transition-all" to="/departments">
                   {t('quickDepartments', 'Departments')}
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/admission">
+                <Link className="text-white hover:underline transition-all" to="/admission">
                   {t('quickAdmissions', 'Admissions')}
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/placement">
+                <Link className="text-white hover:underline transition-all" to="/placement">
                   {t('quickPlacements', 'Placements')}
                 </Link>
               </li>
@@ -74,19 +74,19 @@ export default function Footer() {
             <h3 className="text-white font-bold text-base md:text-lg mb-3">
               {t('moreInfoHeading', 'More Info')}
             </h3>
-            <ul className="space-y-2 text-sm text-slate-200">
+            <ul className="space-y-2 text-sm text-white">
               <li>
-                <Link className="hover:text-white transition-colors" to="/admin">
+                <Link className="text-white hover:underline transition-all" to="/admin">
                   {t('moreAdminLogin', 'Admin Login')}
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/contact">
+                <Link className="text-white hover:underline transition-all" to="/contact">
                   {t('moreContactUs', 'Contact Us')}
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/grievance">
+                <Link className="text-white hover:underline transition-all" to="/grievance">
                   {t('moreGrievancesCell', 'Grievances Cell')}
                 </Link>
               </li>
@@ -95,27 +95,27 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 max-w-7xl mx-auto my-10" />
+        <div className="border-t border-white/20 max-w-7xl mx-auto my-10" />
 
         {/* Bottom Bar: 3 columns flex-row justify-between on desktop */}
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-slate-200 gap-6 md:gap-0">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-white gap-6 md:gap-0">
           {/* Left */}
           <div className="text-center md:text-left">
             <p className="font-semibold text-white mb-0.5">{t('officeTimingsLabel', 'Office Timings:')}</p>
-            <p>{t('officeTimings', siteConfig.officeTimings)}</p>
+            <p className="text-white">{t('officeTimings', siteConfig.officeTimings)}</p>
           </div>
 
           {/* Middle */}
-          <div className="text-center">
+          <div className="text-center text-white">
             {tList('phones', siteConfig.phones).map((p) => (
               <p key={p} className="font-medium text-white">{p}</p>
             ))}
           </div>
 
           {/* Right */}
-          <div className="text-center md:text-right space-y-1">
-            <p>{t('copyright', `All Rights Reserved © SPS, ${siteConfig.copyrightYear}`)}</p>
-            <p className="text-xs">
+          <div className="text-center md:text-right space-y-1 text-white">
+            <p className="text-white">{t('copyright', `All Rights Reserved © SPS, ${siteConfig.copyrightYear}`)}</p>
+            <p className="text-xs text-white">
               {t('builtByLabel', 'Built by')}{' '}
               <span className="font-bold text-white">{t('builtBy', siteConfig.builtBy)}</span>
             </p>
