@@ -10,7 +10,8 @@
     "dev:all": "concurrently -n web,api \"npm run dev\" \"npm run dev:server\"",
     "build": "vite build",
     "preview": "vite preview",
-    "seed": "node server/seed.js"
+    "seed": "node server/seed.js",
+    "start": "node server/index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
