@@ -114,10 +114,8 @@ body {
 .hero-slide {
   position: absolute;
   inset: 0;
-  object-fit: contain;
-}
-@media (min-width: 768px) {
-  .hero-slide { object-fit: cover; }
+  object-fit: cover;
+  object-position: center;
 }
 .h-\[60vh\] { height: 60vh; }
 @media (min-width: 640px) {

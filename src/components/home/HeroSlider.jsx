@@ -31,14 +31,14 @@ export default function HeroSlider() {
   return (
     <div
       id="hero-slider"
-      className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden bg-gray-900"
+      className="relative w-full h-[45vh] min-h-[260px] sm:h-[65vh] md:h-[75vh] lg:h-[80vh] overflow-hidden bg-gray-900"
     >
       {slides.map((src, i) => (
         <img
           key={src}
           src={src}
           alt="SPS Campus"
-          className={`hero-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+          className={`hero-slide absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
             i === active % total ? 'opacity-100' : 'opacity-0'
           }`}
         />
