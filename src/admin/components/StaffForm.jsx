@@ -1,16 +1,22 @@
 import { useRef, useState } from 'react'
 import { api } from '../../api'
-import { departments } from '../../data/departments'
+import { departments as staticDepartments } from '../../data/departments'
 
-const deptLookup = Object.fromEntries(departments.map((d) => [d.slug, d]))
-const accentOptions = departments.map((d) => ({ value: d.slug, label: d.navLabel || d.cardTitle }))
+const staticDeptLookup = Object.fromEntries(staticDepartments.map((d) => [d.slug, d]))
 
 /**
  * StaffForm — add/edit form styled to match the frontend StaffCard:
  * circular photo centered on top, name, role (colored), qualification,
  * experience, email — all centered in a vertical column.
  */
-export default function StaffForm({ initial, onSubmit, onCancel, submitting }) {
+export default function StaffForm({ initial, onSubmit, onCancel, submitting, departments }) {
+  // Merge live departments with static fallback, deduplicate by slug
+  const allDepts = (() => {
+    const live = Array.isArray(departments) && departments.length > 0 ? departments : staticDepartments
+    return live
+  })()
+  const deptLookup = Object.fromEntries(allDepts.map((d) => [d.slug, d]))
+  const accentOptions = allDepts.map((d) => ({ value: d.slug, label: d.navLabel || d.cardTitle }))
   const [values, setValues] = useState(() => {
     const base = {
       department: '',
@@ -35,7 +41,7 @@ export default function StaffForm({ initial, onSubmit, onCancel, submitting }) {
 
   const set = (name, val) => setValues((cur) => ({ ...cur, [name]: val }))
 
-  const dept = deptLookup[values.department] || departments[0] || {}
+  const dept = deptLookup[values.department] || allDepts[0] || {}
   const ring = dept.ring || 'border-indigo-100'
   const accent = dept.accent || 'text-indigo-600'
 

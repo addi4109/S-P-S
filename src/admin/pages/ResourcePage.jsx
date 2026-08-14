@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useResource } from '../../hooks/useResource'
 import { getResourceConfig } from '../../config/resources'
 import { staticFallbacks } from '../../data/staticFallbacks'
+import { departments as staticDepartments } from '../../data/departments'
 import ResourceCards from '../components/ResourceCards'
 import ResourceForm from '../components/ResourceForm'
 import StaffForm from '../components/StaffForm'
@@ -29,14 +30,26 @@ export default function ResourcePage() {
     staticFallbacks[resource] || []
   )
 
+  // Always fetch live departments so staff forms & grouping use dynamic list
+  const { data: liveDepts } = useResource('departments', staticDepartments)
+
   const [editing, setEditing] = useState(null) // null | {} (new) | row (edit)
   const [deleting, setDeleting] = useState(null)
   const [saving, setSaving] = useState(false)
   const [actionError, setActionError] = useState('')
 
-  // Grouping (e.g. staff by department)
+  // For staff: build grouping options from live departments
   const groupField = config?.groupBy?.field
-  const groupOptions = config?.fields.find((f) => f.name === groupField)?.options || []
+  const liveDeptOptions = useMemo(
+    () =>
+      (Array.isArray(liveDepts) ? liveDepts : staticDepartments).map((d) => ({
+        value: d.slug,
+        label: d.navLabel || d.cardTitle,
+      })),
+    [liveDepts]
+  )
+  // Use live dept options for staff grouping; fall back to config options for other resources
+  const groupOptions = groupField === 'department' ? liveDeptOptions : (config?.fields.find((f) => f.name === groupField)?.options || [])
   const [groupFilter, setGroupFilter] = useState('')
 
   const groups = useMemo(() => {
@@ -215,6 +228,7 @@ export default function ResourcePage() {
                   onSubmit={handleSubmit}
                   onCancel={() => setEditing(null)}
                   submitting={saving}
+                  departments={Array.isArray(liveDepts) ? liveDepts : staticDepartments}
                 />
               ) : resource === 'departments' ? (
                 <DepartmentForm
