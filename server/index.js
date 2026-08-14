@@ -135,9 +135,9 @@ app.use('/api/resources', createResourceRouter(requireAuth))
 
 // Cloudinary upload (admin image uploads).
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME || 'yjiggwb7',
+  api_key: process.env.CLOUDINARY_API_KEY || '557523163286456',
+  api_secret: process.env.CLOUDINARY_API_SECRET || 'x0FtfpnYC88Dn2MbQfq-iBhwM1Y',
 })
 
 const upload = multer({
