@@ -1,6 +1,8 @@
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { RESOURCES } from '../config/resources'
 import { setToken } from '../api'
+import { useResource } from '../hooks/useResource'
+import { departments as staticDepartments } from '../data/departments'
 import '../styles/admin.css'
 
 const primaryNav = [
@@ -17,6 +19,9 @@ const resourceNav = Object.keys(RESOURCES).map((name) => ({
 export default function AdminLayout() {
   const navigate = useNavigate()
   const { pathname } = useLocation()
+
+  // Pre-fetch departments so the live list is always in cache for Staff, forms, etc.
+  useResource('departments', staticDepartments)
 
   const all = [...primaryNav, ...resourceNav]
   const current = all.find((n) => pathname === n.to || pathname.startsWith(n.to + '/'))
