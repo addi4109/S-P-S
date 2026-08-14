@@ -1,14 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { departments } from '../../data/departments'
+import { departments as staticDepartments } from '../../data/departments'
+import { useResource } from '../../hooks/useResource'
 import { usePageContent } from '../../hooks/usePageContent'
 import { MenuIcon } from '../ui/Icons'
 import MobileDrawer from './MobileDrawer'
-
-const deptItems = departments.map((d) => ({
-  label: d.navLabel,
-  path: `/departments/${d.slug}`,
-}))
 
 /** Shared classes for nav links/spans, coloured per header variant. */
 function navItemClass(variant, isActive = false, scrolled = false) {
@@ -64,6 +60,13 @@ export default function Header({ variant = 'default' }) {
   const [scrolled, setScrolled] = useState(false)
   const [drawerOpen, setDrawerOpen] = useState(false)
   const location = useLocation()
+
+  // Use live departments from DB; fall back to static on first load
+  const { data: liveDepts } = useResource('departments', staticDepartments)
+  const deptItems = (Array.isArray(liveDepts) ? liveDepts : staticDepartments).map((d) => ({
+    label: d.navLabel || d.cardTitle,
+    path: `/departments/${d.slug}`,
+  }))
 
   const aboutItems = [
     { label: t('aboutAbout', 'About SPS'), path: '/about' },

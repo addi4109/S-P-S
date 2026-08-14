@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { departments } from '../../data/departments'
+import { departments as staticDepartments } from '../../data/departments'
+import { useResource } from '../../hooks/useResource'
 import { usePageContent } from '../../hooks/usePageContent'
 import { ChevronDownIcon, CloseIcon } from '../ui/Icons'
-
-const deptItems = departments.map((d) => ({
-  label: d.navLabel,
-  path: `/departments/${d.slug}`,
-}))
 
 /**
  * MobileDrawer — Premium off-canvas navigation drawer for mobile devices.
@@ -16,6 +12,13 @@ const deptItems = departments.map((d) => ({
 export default function MobileDrawer({ open, onClose }) {
   const { t, img } = usePageContent('header')
   const [openSection, setOpenSection] = useState(null)
+
+  // Use live departments from DB; fall back to static on first load
+  const { data: liveDepts } = useResource('departments', staticDepartments)
+  const deptItems = (Array.isArray(liveDepts) ? liveDepts : staticDepartments).map((d) => ({
+    label: d.navLabel || d.cardTitle,
+    path: `/departments/${d.slug}`,
+  }))
 
   // Lock body scroll while the drawer is open; close on Escape.
   useEffect(() => {
