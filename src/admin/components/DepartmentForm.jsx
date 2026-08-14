@@ -113,140 +113,154 @@ export default function DepartmentForm({ initial, onSubmit, onCancel, submitting
         )}
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-        {/* Card Title */}
-        <div className="admin-form-group">
-          <label className="admin-label">Department Name (Card Title) *</label>
-          <input
-            value={values.cardTitle}
-            onChange={(e) => set('cardTitle', e.target.value)}
-            placeholder="e.g. Computer Engineering"
-            required
-            className="admin-input"
-            style={{ fontSize: 15, fontWeight: 600 }}
-          />
-        </div>
-
-        {/* Description */}
-        <div className="admin-form-group">
-          <label className="admin-label">Description</label>
-          <textarea
-            rows={3}
-            value={values.description}
-            onChange={(e) => set('description', e.target.value)}
-            placeholder="Short description for the card"
-            className="admin-textarea"
-          />
-        </div>
-
-        {/* Vision & Mission */}
-        <div className="admin-form-group">
-          <label className="admin-label">Department Vision</label>
-          <textarea
-            rows={2}
-            value={values.vision}
-            onChange={(e) => set('vision', e.target.value)}
-            placeholder="Department Vision Statement…"
-            className="admin-textarea"
-          />
-        </div>
-
-        <div className="admin-form-group">
-          <label className="admin-label">Department Mission</label>
-          <textarea
-            rows={3}
-            value={values.mission}
-            onChange={(e) => set('mission', e.target.value)}
-            placeholder="Department Mission Statement (points 1, 2, 3)…"
-            className="admin-textarea"
-          />
-        </div>
-
-        {/* Intake + Direct 2nd Year */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <label className="admin-label" style={{ marginBottom: 0 }}>Intake</label>
-            <input
-              type="number"
-              value={values.intake}
-              onChange={(e) => set('intake', e.target.value)}
-              className="admin-input"
-              style={{ width: 90 }}
-            />
+      <div style={{ padding: '0 4px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+        {/* Section: Basic Info */}
+        <div className="admin-form-section">
+          <div className="admin-form-section-header">
+            <h4 className="admin-form-section-title">Basic Information</h4>
+            <p className="admin-form-section-subtitle">Core identity of the department.</p>
           </div>
-          <div className="admin-toggle-wrap">
-            <label className="admin-toggle">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <div className="admin-form-group">
+              <label className="admin-label">Department Name (Card Title) *</label>
               <input
-                type="checkbox"
-                checked={Boolean(values.direct2ndYear)}
-                onChange={(e) => set('direct2ndYear', e.target.checked)}
+                value={values.cardTitle}
+                onChange={(e) => set('cardTitle', e.target.value)}
+                placeholder="e.g. Computer Engineering"
+                required
+                className="admin-input"
+                style={{ fontSize: 15, fontWeight: 600 }}
               />
-              <span className="admin-toggle-slider" />
-            </label>
-            <span className="admin-toggle-label">Direct 2nd Year</span>
+            </div>
+            <div className="admin-form-group">
+              <label className="admin-label">Description</label>
+              <textarea
+                rows={3}
+                value={values.description}
+                onChange={(e) => set('description', e.target.value)}
+                placeholder="Short description for the card"
+                className="admin-textarea"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Admin fields */}
-        <hr className="admin-divider" />
-        <p className="admin-label" style={{ marginBottom: 0, color: '#9ca3af' }}>Advanced / Admin Fields</p>
-
-        <div className="admin-fields-grid">
-          <div className="admin-form-group">
-            <label className="admin-label">Slug *</label>
-            <input
-              value={values.slug}
-              onChange={(e) => set('slug', e.target.value)}
-              required
-              placeholder="computer-engineering"
-              className="admin-input"
-            />
+        {/* Section: Academics & Strategy */}
+        <div className="admin-form-section">
+          <div className="admin-form-section-header">
+            <h4 className="admin-form-section-title">Academics & Strategy</h4>
+            <p className="admin-form-section-subtitle">Vision, mission, and capacity details.</p>
           </div>
-          <div className="admin-form-group">
-            <label className="admin-label">Code</label>
-            <input
-              value={values.code}
-              onChange={(e) => set('code', e.target.value)}
-              placeholder="CO"
-              className="admin-input"
-            />
-          </div>
-          <div className="admin-form-group">
-            <label className="admin-label">Page Title</label>
-            <input
-              value={values.pageTitle}
-              onChange={(e) => set('pageTitle', e.target.value)}
-              className="admin-input"
-            />
-          </div>
-          <div className="admin-form-group">
-            <label className="admin-label">Nav Label</label>
-            <input
-              value={values.navLabel}
-              onChange={(e) => set('navLabel', e.target.value)}
-              className="admin-input"
-            />
-          </div>
-          <div className="admin-form-group" style={{ gridColumn: '1 / -1' }}>
-            <label className="admin-label">Subtitle</label>
-            <input
-              value={values.subtitle}
-              onChange={(e) => set('subtitle', e.target.value)}
-              className="admin-input"
-            />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <div className="admin-form-group">
+              <label className="admin-label">Department Vision</label>
+              <textarea
+                rows={2}
+                value={values.vision}
+                onChange={(e) => set('vision', e.target.value)}
+                placeholder="Department Vision Statement…"
+                className="admin-textarea"
+              />
+            </div>
+            <div className="admin-form-group">
+              <label className="admin-label">Department Mission</label>
+              <textarea
+                rows={3}
+                value={values.mission}
+                onChange={(e) => set('mission', e.target.value)}
+                placeholder="Department Mission Statement (points 1, 2, 3)…"
+                className="admin-textarea"
+              />
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap', marginTop: 4 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <label className="admin-label" style={{ marginBottom: 0 }}>Intake</label>
+                <input
+                  type="number"
+                  value={values.intake}
+                  onChange={(e) => set('intake', e.target.value)}
+                  className="admin-input"
+                  style={{ width: 90 }}
+                />
+              </div>
+              <div className="admin-toggle-wrap">
+                <label className="admin-toggle">
+                  <input
+                    type="checkbox"
+                    checked={Boolean(values.direct2ndYear)}
+                    onChange={(e) => set('direct2ndYear', e.target.checked)}
+                  />
+                  <span className="admin-toggle-slider" />
+                </label>
+                <span className="admin-toggle-label">Direct 2nd Year</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Image URL paste */}
-        <div className="admin-url-paste">
-          <span className="admin-url-paste-label">Or paste an image URL directly:</span>
-          <input
-            type="text"
-            value={values.image || ''}
-            onChange={(e) => set('image', e.target.value)}
-            placeholder="https://…"
-            className="admin-input"
-          />
+        {/* Section: Advanced Settings */}
+        <div className="admin-form-section admin-form-section-highlight">
+          <div className="admin-form-section-header">
+            <h4 className="admin-form-section-title">Advanced Configuration</h4>
+            <p className="admin-form-section-subtitle">Technical routing and page setup.</p>
+          </div>
+          <div className="admin-fields-grid">
+            <div className="admin-form-group">
+              <label className="admin-label">Slug *</label>
+              <input
+                value={values.slug}
+                onChange={(e) => set('slug', e.target.value)}
+                required
+                placeholder="computer-engineering"
+                className="admin-input"
+              />
+            </div>
+            <div className="admin-form-group">
+              <label className="admin-label">Code</label>
+              <input
+                value={values.code}
+                onChange={(e) => set('code', e.target.value)}
+                placeholder="CO"
+                className="admin-input"
+              />
+            </div>
+            <div className="admin-form-group">
+              <label className="admin-label">Page Title</label>
+              <input
+                value={values.pageTitle}
+                onChange={(e) => set('pageTitle', e.target.value)}
+                className="admin-input"
+              />
+            </div>
+            <div className="admin-form-group">
+              <label className="admin-label">Nav Label</label>
+              <input
+                value={values.navLabel}
+                onChange={(e) => set('navLabel', e.target.value)}
+                className="admin-input"
+              />
+            </div>
+            <div className="admin-form-group" style={{ gridColumn: '1 / -1' }}>
+              <label className="admin-label">Subtitle</label>
+              <input
+                value={values.subtitle}
+                onChange={(e) => set('subtitle', e.target.value)}
+                className="admin-input"
+              />
+            </div>
+          </div>
+          
+          {/* Image URL paste */}
+          <div className="admin-url-paste" style={{ marginTop: 20 }}>
+            <span className="admin-url-paste-label">Or paste an image URL directly:</span>
+            <input
+              type="text"
+              value={values.image || ''}
+              onChange={(e) => set('image', e.target.value)}
+              placeholder="https://…"
+              className="admin-input"
+            />
+          </div>
         </div>
       </div>
 
