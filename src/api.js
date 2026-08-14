@@ -2,9 +2,7 @@
  * api — thin fetch client for the SPS backend (Express + MongoDB).
  * Base URL comes from VITE_API_URL (see .env / .env.example).
  */
-const BASE =
-  (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) ||
-  'http://localhost:5000'
+const BASE = ''
 
 async function request(path, options = {}) {
   const token = getToken()
